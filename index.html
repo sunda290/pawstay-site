@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>PawStay – Pet sitter em Hamilton | Pet sitter in Hamilton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PawStay – serviço profissional de pet sitter em Hamilton e região. Cuidamos do seu cão ou gato em casa, com visitas, brincadeiras e atualizações por WhatsApp." />
+  <style>
+    :root {
+      --primary: #16a34a;
+      --primary-dark: #15803d;
+      --primary-soft: #dcfce7;
+      --bg-body: #f1f5f9;
+      --bg-hero: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --card-bg: #ffffff;
+      --border-soft: #e2e8f0;
+      --accent: #facc15;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px; /* se ainda cortar, aumenta pra 104px ou 112px */
+    }
+
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: #ffffffcc;
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* .brand-text span:first-child {
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-text span:last-child {
+      font-size: 12px;
+      color: var(--text-muted);
+    } */
+
+    /* Título "PawStay" – mantém o padrão atual */
+    .brand-name {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    }
+
+    /* Subtítulo embaixo – PT e EN com o MESMO tamanho */
+    .brand-tagline {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.3;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: var(--primary);
+      transition: width 0.16s ease-in-out;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+
+    .lang-btn {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: #f8fafc;
+      padding: 4px 8px;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+    }
+
+    .lang-btn span.flag {
+      font-size: 14px;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      border-color: var(--primary-dark);
+      color: #ffffff;
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: none;
+      background: #25d366;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(34, 197, 94, 0.35);
+      white-space: nowrap;
+    }
+
+    .btn-whatsapp span.icon {
+      font-size: 16px;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 20px;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+      .mobile-menu-toggle {
+        display: block;
+      }
+      .mobile-nav-open nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        padding: 12px 20px 16px;
+        background: #ffffff;
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .mobile-nav-open .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* MAIN LAYOUT */
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+    }
+
+    section {
+      padding: 50px 0;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding-top: 40px;
+      padding-bottom: 50px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+      background: var(--bg-hero);
+      border-radius: 32px;
+      margin-top: 18px;
+      padding-left: 32px;
+      padding-right: 32px;
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.12);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .hero-badge span.icon {
+      background: #22c55e;
+      color: #ffffff;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .hero-title {
+      font-size: 36px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin: 14px 0 10px;
+      font-weight: 800;
+    }
+
+    .hero-title span.highlight {
+      color: var(--primary-dark);
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 420px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .btn-primary {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: none;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 14px 35px rgba(34, 197, 94, 0.35);
+    }
+
+    .btn-outline {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      background: transparent;
+      color: var(--primary-dark);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .hero-note span.icon {
+      color: #16a34a;
+      font-size: 16px;
+      margin-top: 2px;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-image {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.3);
+      min-height: 230px;
+      background-image: url("https://images.pexels.com/photos/7210700/pexels-photo-7210700.jpeg?auto=compress&cs=tinysrgb&w=1200");
+      background-size: cover;
+      background-position: bottom;
+    }
+
+    .hero-tag {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: #f97316;
+      color: #ffffff;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+    }
+
+    .hero-badge-card {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .hero-badge-card span.icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-dark);
+    }
+
+    .hero-badge-card strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 28px 20px 32px;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+    }
+
+    /* SECTION SHARED */
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .section-kicker {
+      font-size: 25px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--primary-dark);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cards-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card-service {
+      background: #f0fdf4;
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      border: 1px solid #bbf7d0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-service.accent {
+      border-color: #f97316;
+      background: #fffbeb;
+    }
+
+    .card-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+    .card-service h3 {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .card-service p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .card-service small {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .card-service .cta-inline {
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* WHY SECTION */
+
+    .why-section {
+      background: #16a34a;
+      color: #ffffff;
+      border-radius: 26px;
+      padding: 32px 26px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-section::before,
+    .why-section::after {
+      content: "🐾";
+      position: absolute;
+      font-size: 80px;
+      opacity: 0.06;
+    }
+
+    .why-section::before {
+      top: -20px;
+      left: 10px;
+    }
+
+    .why-section::after {
+      bottom: -20px;
+      right: 20px;
+    }
+
+    .why-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .why-subtitle {
+      text-align: center;
+      font-size: 13px;
+      max-width: 620px;
+      margin: 0 auto 18px;
+      opacity: 0.9;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .why-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .why-card {
+      background: #15803d;
+      border-radius: 16px;
+      padding: 14px 14px 12px;
+      font-size: 13px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .why-card-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .why-card-title span.icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: #22c55e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+
+    .why-cta {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+      gap: 26px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .about {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .about-images {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .about-images div {
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 120px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .about-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .about h2 {
+      font-size: 22px;
+      letter-spacing: -0.03em;
+      margin: 8px 0;
+      font-weight: 800;
+    }
+
+    .about p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .about ul {
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+
+    .about ul li {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    /* HOW IT WORKS */
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .steps-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .step-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 16px 14px;
+      border: 1px solid var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .step-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .step-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .steps-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    /* AREA */
+
+    .area-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 22px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .area-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .area-tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .area-tag span.icon {
+      font-size: 13px;
+    }
+
+    .area-note {
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: #fef3c7;
+      border: 1px solid #facc15;
+      font-size: 12px;
+      color: #854d0e;
+    }
+
+    .area-right-card {
+      border-radius: 22px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.18);
+    }
+
+    .area-right-img {
+      min-height: 160px;
+      background-image: url("https://images.pexels.com/photos/7210281/pexels-photo-7210281.jpeg?auto=compress&cs=tinysrgb&w=1200");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .area-right-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .area-right-body h3 {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .area-right-body p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .area-right-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: #22c55e;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .testimonials-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 16px 14px 14px;
+      border: 1px solid var(--border-soft);
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .testimonial-pet {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .testimonial-placeholder {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #16a34a;
+      border-radius: 26px;
+      padding: 30px 24px 26px;
+      color: #ffffff;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .contact-header h2 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .contact-header p {
+      font-size: 14px;
+      opacity: 0.9;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-card {
+      background: #15803d;
+      border-radius: 18px;
+      padding: 14px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .contact-card-title {
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-card-title span.icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: #22c55e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+
+    .contact-card p {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .contact-form {
+      margin: 0 auto;
+      max-width: 520px;
+      background: rgba(15, 23, 42, 0.18);
+      border-radius: 18px;
+      padding: 12px 14px 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .form-group label {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border-radius: 10px;
+      border: 1px solid rgba(15, 23, 42, 0.35);
+      padding: 7px 8px;
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .form-group textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+
+    .btn-form {
+      margin-top: 6px;
+      width: 100%;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: none;
+      background: #22c55e;
+      color: #0f172a;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .contact-note {
+      margin-top: 6px;
+      font-size: 11px;
+      text-align: center;
+      opacity: 0.85;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 40px;
+      padding: 26px 20px 24px;
+      background: #020617;
+      color: #e5e7eb;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .footer-inner {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-logo .brand {
+      padding: 0;
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .footer-social a {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .footer-column-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    .footer-links a:hover {
+      color: #e5e7eb;
+    }
+
+    .footer-bottom {
+      max-width: 1120px;
+      margin: 18px auto 0;
+      padding-top: 12px;
+      border-top: 1px solid #111827;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      color: #9ca3af;
+    }
+
+    .footer-flags {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .lang-block {
+      display: none;
+    }
+
+    .lang-block.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header id="top">
+    <div class="header-inner">
+        <div class="brand">
+        <div class="logo-icon">
+            <img src="img/logo.png"
+                alt="PawStay – pet sitter em Hamilton"
+                class="logo-img">
+        </div>
+            <div class="brand-text">
+                <span class="brand-name">PawStay</span>
+
+                <span class="brand-tagline lang-block lang-pt">
+                    Pet sitter em<br>Hamilton &amp; Região
+                </span>
+
+                <span class="brand-tagline lang-block lang-en">
+                    Pet sitter in Hamilton &amp; Area
+                </span>
+            </div>
+
+        </div>
+
+      <button class="mobile-menu-toggle" id="mobileMenuBtn">☰</button>
+
+      <nav id="mainNav">
+        <div class="nav-links">
+          <a href="#inicio" class="nav-link">
+            <span class="lang-block lang-pt active">Início</span>
+            <span class="lang-block lang-en">Home</span>
+        </a>
+        <a href="#servicos" class="nav-link">
+          <span class="lang-block lang-pt active">Serviços</span>
+          <span class="lang-block lang-en">Services</span>
+        </a>
+        <a href="#sobre" class="nav-link">
+          <span class="lang-block lang-pt active">Sobre</span>
+          <span class="lang-block lang-en">About</span>
+        </a>
+          <a href="#como-funciona" class="nav-link">
+            <span class="lang-block lang-pt active">Como Funciona</span>
+            <span class="lang-block lang-en">How It Works</span>
+          </a>
+          <a href="#area-atendimento" class="nav-link">
+              <span class="lang-block lang-pt active">Área de Atendimento</span>
+              <span class="lang-block lang-en">Service Area</span>
+            </a>
+            <a href="#depoimentos" class="nav-link">
+              <span class="lang-block lang-pt active">Depoimentos</span>
+              <span class="lang-block lang-en">Testimonials</span>
+            </a>
+            <a href="#contato" class="nav-link">
+            <span class="lang-block lang-pt active">Contato</span>
+            <span class="lang-block lang-en">Contact</span>
+          </a>
+          <a href="termos-e-faq.html" class="nav-link">
+            <span class="lang-block lang-pt active">Termos & FAQ</span>
+            <span class="lang-block lang-en">Terms & FAQ</span>
+          </a>
+        </div>
+
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="pt">
+            <span class="flag">🇧🇷</span><span>PT</span>
+          </button>
+          <button class="lang-btn" data-lang="en">
+            <span class="flag">🇨🇦</span><span>EN</span>
+          </button>
+          <a href="https://wa.me/13658833886" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            <span class="icon">📲</span>
+            <span class="lang-block lang-pt active">Chamar no WhatsApp</span>
+            <span class="lang-block lang-en">WhatsApp Now</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div>
+        <div class="hero-badge">
+          <span class="icon">⭐</span>
+          <span class="lang-block lang-pt active">Pet sitter profissional em Hamilton</span>
+          <span class="lang-block lang-en">Professional pet sitter in Hamilton</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="lang-block lang-pt active">
+            Cuidado com o seu pet, <span class="highlight">como se fosse nosso</span>
+          </span>
+          <span class="lang-block lang-en">
+            Caring for your pet <span class="highlight">as if it were ours</span>
+          </span>
+        </h1>
+        <p class="hero-subtitle">
+          <span class="lang-block lang-pt active">
+            Serviço profissional de pet sitter em Hamilton e região. Visitas em casa ou diárias na nossa residência,
+            com carinho, brincadeiras, alimentação, passeios e atualizações em tempo real pelo WhatsApp.
+          </span>
+          <span class="lang-block lang-en">
+            Professional pet sitting service in Hamilton and area. Home visits or day care at my home with love,
+            playtime, feeding, walks and real-time updates through WhatsApp.
+          </span>
+        </p>
+        <div class="hero-actions">
+          <a href="#servicos" class="btn-primary">
+            <span class="lang-block lang-pt active">Ver serviços</span>
+            <span class="lang-block lang-en">View services</span>
+          </a>
+          <a href="https://wa.me/13658833886?text=Olá%2C+vi+o+site+da+PawStay+e+gostaria+de+um+orçamento+para+pet+sitter." target="_blank" rel="noopener noreferrer" class="btn-outline">
+            <span class="lang-block lang-pt active">Pedir orçamento no WhatsApp</span>
+            <span class="lang-block lang-en">Request a quote on WhatsApp</span>
+          </a>
+        </div>
+        <div class="hero-note">
+          <span class="icon">✅</span>
+          <p>
+            <span class="lang-block lang-pt active">
+              Você pode viajar ou trabalhar tranquilo: mantemos a rotina do seu pet e enviamos fotos e vídeos em todas as visitas.
+            </span>
+            <span class="lang-block lang-en">
+              Travel or work with peace of mind: we follow your pet’s routine and send photos and videos after every visit.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-image"></div>
+        <div class="hero-tag">
+          <span class="lang-block lang-pt active">Hamilton & Região · Atendimento local</span>
+          <span class="lang-block lang-en">Hamilton & Area · Local care</span>
+        </div>
+        <div class="hero-badge-card">
+          <span class="icon">💚</span>
+          <div>
+            <strong>100%</strong>
+            <span class="lang-block lang-pt active">Dedicação ao seu pet</span>
+            <span class="lang-block lang-en">Dedication to your pet</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="servicos">
+      <div class="section-header">
+        <div class="section-kicker">
+          <span class="lang-block lang-pt active">Serviços PawStay</span>
+          <span class="lang-block lang-en">PawStay Services</span>
+        </div>
+        <h2 class="section-title">
+          <span class="lang-block lang-pt active">Opções flexíveis para a rotina do seu pet</span>
+          <span class="lang-block lang-en">Flexible options for your pet’s routine</span>
+        </h2>
+        <p class="section-subtitle">
+          <span class="lang-block lang-pt active">
+            Cada pet tem um jeitinho e necessidades diferentes. Escolha o serviço que melhor combina com a sua rotina e com o perfil do seu cão ou gato.
+          </span>
+          <span class="lang-block lang-en">
+            Every pet is unique. Choose the service that best fits your schedule and your dog’s or cat’s personality.
+          </span>
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Diárias -->
+        <article class="card-service">
+          <div class="card-icon" style="background:#dcfce7;color:#16a34a;">🏡</div>
+          <h3>
+            <span class="lang-block lang-pt active">Diárias na Minha Casa</span>
+            <span class="lang-block lang-en">Day Care at My Home</span>
+          </h3>
+          <p>
+            <span class="lang-block lang-pt active">
+              Ideal para cães sociáveis. Seu pet passa o dia em ambiente seguro, com supervisão, alimentação, água fresca, descanso e brincadeiras.
+            </span>
+            <span class="lang-block lang-en">
+              Ideal for social dogs. Your pet spends the day in a safe environment with supervision, fresh water, feeding, rest and playtime.
+            </span>
+          </p>
+          <small>
+            <span class="lang-block lang-pt active">
+              Indicado para: cães de todos os portes que se adaptam bem a novos ambientes.  
+              Valores: a partir de $$, conforme tempo de permanência.
+            </span>
+            <span class="lang-block lang-en">
+              Best for: dogs of all sizes that adapt well to new environments.  
+              Pricing: starting at $$, depending on length of stay.
+            </span>
+          </small>
+          <a href="https://wa.me/13658833886" target="_blank" class="cta-inline">
+            <span class="lang-block lang-pt active">Quero este serviço – falar no WhatsApp</span>
+            <span class="lang-block lang-en">I want this service – WhatsApp</span> →
+          </a>
+        </article>
+
+        <!-- Visita básica -->
+        <article class="card-service">
+          <div class="card-icon" style="background:#dbeafe;color:#1d4ed8;">🕒</div>
+          <h3>
+            <span class="lang-block lang-pt active">Visita Básica em Casa</span>
+            <span class="lang-block lang-en">Basic Home Visit</span>
+          </h3>
+          <p>
+            <span class="lang-block lang-pt active">
+              Mantém seu pet no conforto de casa. Alimentação, água, higiene leve, atenção e carinho. Duração média: 20–30 minutos.
+            </span>
+            <span class="lang-block lang-en">
+              Keeps your pet comfortable at home. Feeding, fresh water, light cleaning, attention and affection. Average duration: 20–30 minutes.
+            </span>
+          </p>
+          <small>
+            <span class="lang-block lang-pt active">
+              Indicado para: gatos, cães calmos, pets idosos ou tímidos.  
+              Valores: a partir de $$ por visita.
+            </span>
+            <span class="lang-block lang-en">
+              Best for: cats, calm dogs, senior or shy pets.  
+              Pricing: from $$ per visit.
+            </span>
+          </small>
+          <a href="https://wa.me/13658833886" target="_blank" class="cta-inline">
+            <span class="lang-block lang-pt active">Quero este serviço – falar no WhatsApp</span>
+            <span class="lang-block lang-en">I want this service – WhatsApp</span> →
+          </a>
+        </article>
+
+        <!-- Visita com passeio -->
+        <article class="card-service">
+          <div class="card-icon" style="background:#fef9c3;color:#ca8a04;">🚶‍♂️</div>
+          <h3>
+            <span class="lang-block lang-pt active">Visita com Passeio</span>
+            <span class="lang-block lang-en">Visit & Walk</span>
+          </h3>
+          <p>
+            <span class="lang-block lang-pt active">
+              Cuidados básicos + passeio seguro na rua ou parque, respeitando o ritmo do seu cão. Duração média: 30–45 minutos.
+            </span>
+            <span class="lang-block lang-en">
+              Basic care plus a safe walk on the street or park, following your dog’s pace. Average duration: 30–45 minutes.
+            </span>
+          </p>
+          <small>
+            <span class="lang-block lang-pt active">
+              Indicado para: cães que precisam gastar energia durante o dia.  
+              Valores: a partir de $$ por visita.
+            </span>
+            <span class="lang-block lang-en">
+              Best for: dogs that need to burn energy during the day.  
+              Pricing: from $$ per visit.
+            </span>
+          </small>
+          <a href="https://wa.me/13658833886" target="_blank" class="cta-inline">
+            <span class="lang-block lang-pt active">Quero este serviço – falar no WhatsApp</span>
+            <span class="lang-block lang-en">I want this service – WhatsApp</span> →
+          </a>
+        </article>
+
+        <!-- Pacote viagens -->
+        <article class="card-service">
+          <div class="card-icon" style="background:#fee2e2;color:#b91c1c;">✈️</div>
+          <h3>
+            <span class="lang-block lang-pt active">Pacote Viagens</span>
+            <span class="lang-block lang-en">Travel Package</span>
+          </h3>
+          <p>
+            <span class="lang-block lang-pt active">
+              Múltiplas visitas por dia enquanto você viaja. Inclui alimentação, brincadeiras, limpeza, monitoramento e atualizações completas pelo WhatsApp.
+            </span>
+            <span class="lang-block lang-en">
+              Multiple daily visits while you travel. Includes feeding, playtime, cleaning, monitoring and full updates via WhatsApp.
+            </span>
+          </p>
+          <small>
+            <span class="lang-block lang-pt active">
+              Indicado para: pets que ficam sozinhos por vários dias.  
+              Valores: sob orçamento, de acordo com a duração da viagem.
+            </span>
+            <span class="lang-block lang-en">
+              Best for: pets staying home alone for several days.  
+              Pricing: custom quote based on trip duration.
+            </span>
+          </small>
+          <a href="https://wa.me/13658833886" target="_blank" class="cta-inline">
+            <span class="lang-block lang-pt active">Quero este serviço – falar no WhatsApp</span>
+            <span class="lang-block lang-en">I want this service – WhatsApp</span> →
+          </a>
+        </article>
+
+        <!-- Medicação -->
+        <article class="card-service">
+          <div class="card-icon" style="background:#ede9fe;color:#6d28d9;">💊</div>
+          <h3>
+            <span class="lang-block lang-pt active">Administração de Medicação</span>
+            <span class="lang-block lang-en">Medication Administration</span>
+          </h3>
+          <p>
+            <span class="lang-block lang-pt active">
+              Medicação oral ou tópica simples, seguindo exatamente a prescrição do veterinário e suas orientações.
+            </span>
+            <span class="lang-block lang-en">
+              Simple oral or topical medication, strictly following the vet’s prescription and your instructions.
+            </span>
+          </p>
+          <small>
+            <span class="lang-block lang-pt active">
+              Importante: não realizo procedimentos invasivos. Valores adicionais por aplicação, combinados no orçamento.
+            </span>
+            <span class="lang-block lang-en">
+              Important: no invasive procedures are performed. Extra fee per application, agreed in advance.
+            </span>
+          </small>
+          <a href="https://wa.me/13658833886" target="_blank" class="cta-inline">
+            <span class="lang-block lang-pt active">Quero este serviço – falar no WhatsApp</span>
+            <span class="lang-block lang-en">I want this service – WhatsApp</span> →
+          </a>
+        </article>
+
+        <!-- Extras -->
+        <article class="card-service accent">
+          <div class="card-icon" style="background:#ffedd5;color:#c2410c;">🏠</div>
+          <h3>
+            <span class="lang-block lang-pt active">Serviços Extras para Casa</span>
+            <span class="lang-block lang-en">Extra Home Services</span>
+          </h3>
+          <p>
+            <span class="lang-block lang-pt active">
+              Regar plantas, recolher correspondências, ajustar cortinas e luzes. Mais segurança e cuidado enquanto você está fora.
+            </span>
+            <span class="lang-block lang-en">
+              Watering plants, picking up mail, adjusting curtains and lights. Extra safety and care while you’re away.
+            </span>
+          </p>
+          <small>
+            <span class="lang-block lang-pt active">
+              Benefício: tranquilidade completa para você e para o seu lar. Valores adicionais combinados no orçamento.
+            </span>
+            <span class="lang-block lang-en">
+              Benefit: full peace of mind for your home. Extra fee agreed in your quote.
+            </span>
+          </small>
+          <a href="https://wa.me/13658833886" target="_blank" class="cta-inline">
+            <span class="lang-block lang-pt active">Quero este serviço – falar no WhatsApp</span>
+            <span class="lang-block lang-en">I want this service – WhatsApp</span> →
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHY AT HOME -->
+    <section>
+      <div class="why-section">
+        <h2 class="why-title">
+          <span class="lang-block lang-pt active">Por que escolher pet sitter em casa?</span>
+          <span class="lang-block lang-en">Why choose in-home pet sitting?</span>
+        </h2>
+        <p class="why-subtitle">
+          <span class="lang-block lang-pt active">
+            Muitos pets sofrem ao mudar de ambiente. O serviço de pet sitter em casa é a melhor opção para cães e gatos
+            que precisam de carinho, rotina e segurança enquanto você não está.
+          </span>
+          <span class="lang-block lang-en">
+            Many pets feel stressed when their environment changes. In-home pet sitting is the best option for dogs and
+            cats who need routine, comfort and safety while you’re away.
+          </span>
+        </p>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-card-title">
+              <span class="icon">💚</span>
+              <span class="lang-block lang-pt active">Menos Estresse</span>
+              <span class="lang-block lang-en">Less Stress</span>
+            </div>
+            <p>
+              <span class="lang-block lang-pt active">
+                Seu pet fica no próprio ambiente, com cheiros e rotina que ele já conhece. Sem ansiedade de lugares desconhecidos.
+              </span>
+              <span class="lang-block lang-en">
+                Your pet stays in their own space, with familiar smells and routine. No anxiety from strange places.
+              </span>
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card-title">
+              <span class="icon">🐱</span>
+              <span class="lang-block lang-pt active">Ideal para Pets Sensíveis</span>
+              <span class="lang-block lang-en">Ideal for Sensitive Pets</span>
+            </div>
+            <p>
+              <span class="lang-block lang-pt active">
+                Perfeito para gatos, cães idosos e pets tímidos ou sensíveis que preferem o conforto do lar.
+              </span>
+              <span class="lang-block lang-en">
+                Perfect for cats, senior pets and shy or sensitive animals who feel better at home.
+              </span>
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card-title">
+              <span class="icon">🛡️</span>
+              <span class="lang-block lang-pt active">Menos Risco de Doenças</span>
+              <span class="lang-block lang-en">Lower Disease Risk</span>
+            </div>
+            <p>
+              <span class="lang-block lang-pt active">
+                Menor exposição a doenças comuns em hotéis e creches com múltiplos animais compartilhando o mesmo espaço.
+              </span>
+              <span class="lang-block lang-en">
+                Less exposure to common illnesses found in kennels and daycares where many animals share the same space.
+              </span>
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card-title">
+              <span class="icon">📲</span>
+              <span class="lang-block lang-pt active">Atualizações Constantes</span>
+              <span class="lang-block lang-en">Constant Updates</span>
+            </div>
+            <p>
+              <span class="lang-block lang-pt active">
+                Fotos, vídeos e relatos das visitas enviados pelo WhatsApp. Você se sente perto do seu pet o tempo todo.
+              </span>
+              <span class="lang-block lang-en">
+                Photos, videos and visit notes sent via WhatsApp. You feel close to your pet at all times.
+              </span>
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card-title">
+              <span class="icon">🏠</span>
+              <span class="lang-block lang-pt active">Segurança para a Casa</span>
+              <span class="lang-block lang-en">Home Security</span>
+            </div>
+            <p>
+              <span class="lang-block lang-pt active">
+                Alguém de confiança passando regularmente, acendendo e apagando luzes, observando se está tudo em ordem.
+              </span>
+              <span class="lang-block lang-en">
+                A trusted person visiting regularly, turning lights on and off and checking if everything looks fine.
+              </span>
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card-title">
+              <span class="icon">⏰</span>
+              <span class="lang-block lang-pt active">Rotina Mantida</span>
+              <span class="lang-block lang-en">Routine Maintained</span>
+            </div>
+            <p>
+              <span class="lang-block lang-pt active">
+                Mantemos alimentação, medicação e passeios nos horários combinados, como seu pet está acostumado.
+              </span>
+              <span class="lang-block lang-en">
+                We keep feeding, medication and walks on the schedule your pet is used to.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="why-cta">
+          <a href="https://wa.me/13658833886" target="_blank" class="btn-primary">
+            <span class="lang-block lang-pt active">Fale comigo no WhatsApp</span>
+            <span class="lang-block lang-en">Talk to me on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="sobre">
+      <div class="about">
+        <div class="about-images">
+          <div style="background-image:url('https://images.pexels.com/photos/551628/pexels-photo-551628.jpeg');"></div>
+          <div style="background-image:url('https://images.pexels.com/photos/1386422/pexels-photo-1386422.jpeg');"></div>
+          <div style="background-image:url('https://images.pexels.com/photos/3732465/pexels-photo-3732465.jpeg');"></div>
+          <div style="background-image:url('https://images.pexels.com/photos/15735691/pexels-photo-15735691.jpeg');"></div>
+        </div>
+
+        <div>
+          <div class="about-badge">
+            <span>💬</span>
+            <span class="lang-block lang-pt active">Sobre a PawStay</span>
+            <span class="lang-block lang-en">About PawStay</span>
+          </div>
+          <h2>
+            <span class="lang-block lang-pt active">Cuidado profissional e carinhoso</span>
+            <span class="lang-block lang-en">Professional, caring pet sitting</span>
+          </h2>
+          <p>
+            <span class="lang-block lang-pt active">
+              Olá! Eu sou a pessoa por trás da PawStay, um serviço de pet sitter em Hamilton criado para quem precisa viajar
+              ou trabalhar com a consciência tranquila, sabendo que o pet está em boas mãos.
+            </span>
+            <span class="lang-block lang-en">
+              Hi! I’m the person behind PawStay, a pet sitting service in Hamilton created for people who need to travel or
+              work with peace of mind, knowing their pet is in good hands.
+            </span>
+          </p>
+          <p>
+            <span class="lang-block lang-pt active">
+              Ao longo dos anos, convivi com cães e gatos de todos os tipos: filhotes cheios de energia, cães idosos que
+              precisam de cuidado extra, gatos tímidos que só confiam em quem respeita o tempo deles. Essa experiência me
+              mostrou algo essencial: cada pet é único e merece ser tratado como tal.
+            </span>
+            <span class="lang-block lang-en">
+              Over the years I’ve lived with all kinds of dogs and cats: energetic puppies, senior dogs that need extra care,
+              shy cats that only trust those who respect their time. This experience taught me something essential: every pet
+              is unique and deserves to be treated that way.
+            </span>
+          </p>
+          <p>
+            <span class="lang-block lang-pt active">
+              Na PawStay, o foco é manter a rotina do seu pet o mais próxima possível do normal, seja com visitas em casa ou
+              diárias na minha residência, sempre com carinho, paciência e reforço positivo.
+            </span>
+            <span class="lang-block lang-en">
+              At PawStay, the main goal is to keep your pet’s routine as close to normal as possible, with home visits or day
+              care at my place, always with kindness, patience and positive reinforcement.
+            </span>
+          </p>
+          <ul>
+            <li class="lang-block lang-pt active">Experiência com cães e gatos de todas as idades e temperamentos.</li>
+            <li class="lang-block lang-pt active">Atualizações em tempo real: fotos, vídeos e mensagens em cada visita.</li>
+            <li class="lang-block lang-pt active">Cuidado personalizado, seguindo exatamente as orientações que você passar.</li>
+
+            <li class="lang-block lang-en">Experience with dogs and cats of all ages and temperaments.</li>
+            <li class="lang-block lang-en">Real-time updates: photos, videos and messages after every visit.</li>
+            <li class="lang-block lang-en">Personalized care, strictly following your instructions and your vet’s guidance.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="como-funciona">
+      <div class="section-header">
+        <div class="section-kicker">
+          <span class="lang-block lang-pt active">Como Funciona</span>
+          <span class="lang-block lang-en">How It Works</span>
+        </div>
+        <h2 class="section-title">
+          <span class="lang-block lang-pt active">Passo a passo simples, transparente e seguro</span>
+          <span class="lang-block lang-en">A simple, transparent and safe process</span>
+        </h2>
+        <p class="section-subtitle">
+          <span class="lang-block lang-pt active">
+            Assim você sabe exatamente o que vai acontecer com o seu pet em cada etapa do atendimento.
+          </span>
+          <span class="lang-block lang-en">
+            This way you know exactly what will happen with your pet at every step of the service.
+          </span>
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <!-- 1 -->
+        <article class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-title">
+            <span class="lang-block lang-pt active">Contato inicial</span>
+            <span class="lang-block lang-en">Initial contact</span>
+          </div>
+          <p class="step-text">
+            <span class="lang-block lang-pt active">
+              Você fala comigo pelo WhatsApp, formulário ou redes sociais e conta um pouco sobre o seu pet, datas e tipo de serviço.
+            </span>
+            <span class="lang-block lang-en">
+              You contact me via WhatsApp, form or social media and tell me about your pet, your dates and the service you need.
+            </span>
+          </p>
+        </article>
+
+        <!-- 2 -->
+        <article class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-title">
+            <span class="lang-block lang-pt active">Conhecendo o seu pet</span>
+            <span class="lang-block lang-en">Getting to know your pet</span>
+          </div>
+          <p class="step-text">
+            <span class="lang-block lang-pt active">
+              Conversamos sobre rotina, alimentação, medicações, medos e preferências. Se necessário, marcamos uma visita de apresentação (meet & greet).
+            </span>
+            <span class="lang-block lang-en">
+              We talk about routine, feeding, medication, fears and preferences. If needed, we schedule a meet & greet visit.
+            </span>
+          </p>
+        </article>
+
+        <!-- 3 -->
+        <article class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-title">
+            <span class="lang-block lang-pt active">Definição do pacote</span>
+            <span class="lang-block lang-en">Package definition</span>
+          </div>
+          <p class="step-text">
+            <span class="lang-block lang-pt active">
+              Com base nas necessidades do seu pet e no seu orçamento, definimos juntos o tipo de serviço e a frequência ideal.
+            </span>
+            <span class="lang-block lang-en">
+              Based on your pet’s needs and your budget, we define together the best service type and visit frequency.
+            </span>
+          </p>
+        </article>
+
+        <!-- 4 -->
+        <article class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-title">
+            <span class="lang-block lang-pt active">Confirmação e pagamento</span>
+            <span class="lang-block lang-en">Confirmation & payment</span>
+          </div>
+          <p class="step-text">
+            <span class="lang-block lang-pt active">
+              Fechamos datas, horários e valores. O pagamento pode ser feito por e-transfer ou outro meio combinado, de forma segura.
+            </span>
+            <span class="lang-block lang-en">
+              We confirm dates, times and pricing. Payment can be made via e-transfer or other agreed secure method.
+            </span>
+          </p>
+        </article>
+
+        <!-- 5 -->
+        <article class="step-card">
+          <div class="step-number">5</div>
+          <div class="step-title">
+            <span class="lang-block lang-pt active">Cuidados com o pet</span>
+            <span class="lang-block lang-en">Pet care visits</span>
+          </div>
+          <p class="step-text">
+            <span class="lang-block lang-pt active">
+              Durante o período contratado, sigo fielmente a rotina combinada: alimentação, água, higiene, brincadeiras, passeios e medicação.
+            </span>
+            <span class="lang-block lang-en">
+              During the service period I strictly follow the agreed routine: feeding, water, cleaning, playtime, walks and medication.
+            </span>
+          </p>
+        </article>
+
+        <!-- 6 -->
+        <article class="step-card">
+          <div class="step-number">6</div>
+          <div class="step-title">
+            <span class="lang-block lang-pt active">Atualizações em tempo real</span>
+            <span class="lang-block lang-en">Real-time updates</span>
+          </div>
+          <p class="step-text">
+            <span class="lang-block lang-pt active">
+              Em cada visita envio fotos, vídeos e mensagens pelo WhatsApp, para você acompanhar tudo e matar a saudade.
+            </span>
+            <span class="lang-block lang-en">
+              After every visit I send photos, videos and messages through WhatsApp so you can follow everything and miss your pet a little less.
+            </span>
+          </p>
+        </article>
+      </div>
+
+      <div class="steps-actions">
+        <a href="termos-e-faq.html" class="btn-outline">
+          <span class="lang-block lang-pt active">Ver Termos & FAQ completos</span>
+          <span class="lang-block lang-en">View full Terms & FAQ</span>
+        </a>
+        <a href="https://wa.me/13658833886" target="_blank" class="btn-primary">
+          <span class="lang-block lang-pt active">Começar pelo WhatsApp</span>
+          <span class="lang-block lang-en">Start via WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section id="area-atendimento">
+      <div class="area-grid">
+        <div>
+          <div class="section-kicker">
+            <span class="lang-block lang-pt active">Onde Atendemos</span>
+            <span class="lang-block lang-en">Where We Operate</span>
+          </div>
+          <h2 class="section-title" style="text-align:left;">
+            <span class="lang-block lang-pt active">Área de atendimento PawStay</span>
+            <span class="lang-block lang-en">PawStay service area</span>
+          </h2>
+          <p class="section-subtitle" style="text-align:left;margin:0;">
+            <span class="lang-block lang-pt active">
+              A PawStay atende Hamilton e região, sempre avaliando a melhor forma de chegar até você e ao seu pet com segurança e pontualidade.
+            </span>
+            <span class="lang-block lang-en">
+              PawStay serves Hamilton and surrounding areas, always looking for the best way to reach you and your pet safely and on time.
+            </span>
+          </p>
+
+          <div class="area-tags">
+            <div class="area-tag">
+              <span class="icon">📍</span> Hamilton
+            </div>
+            <div class="area-tag">
+              <span class="icon">📍</span> Ancaster
+            </div>
+            <div class="area-tag">
+              <span class="icon">📍</span> Stoney Creek
+            </div>
+            <div class="area-tag">
+              <span class="icon">📍</span> Grimsby
+            </div>
+            <div class="area-tag">
+            <span class="icon">📍</span>
+            <span class="lang-block lang-pt active">Dundas e região</span>
+            <span class="lang-block lang-en">Dundas &amp; Area</span>
+            </div>
+          </div>
+
+          <div class="area-note">
+            <span class="lang-block lang-pt active">
+              Observação: para buscar ou levar o pet de carro, ou para distâncias maiores, pode haver taxa adicional a partir de $10,
+              combinada previamente no orçamento.
+            </span>
+            <span class="lang-block lang-en">
+              Note: for pick-up / drop-off by car or longer distances, an extra fee starting at $10 may apply, agreed in advance in your quote.
+            </span>
+          </div>
+        </div>
+
+        <div class="area-right-card">
+          <div class="area-right-img"></div>
+          <div class="area-right-body">
+            <div>
+              <h3>
+                <span class="lang-block lang-pt active">Hamilton & Região</span>
+                <span class="lang-block lang-en">Hamilton & Area</span>
+              </h3>
+              <p>
+                <span class="lang-block lang-pt active">Cuidado local, personalizado e próximo da sua rotina.</span>
+                <span class="lang-block lang-en">Local, personalized care tailored to your routine.</span>
+              </p>
+            </div>
+            <div class="area-right-icon">💚</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="depoimentos">
+      <div class="section-header">
+        <div class="section-kicker">
+          <span class="lang-block lang-pt active">Depoimentos</span>
+          <span class="lang-block lang-en">Testimonials</span>
+        </div>
+        <h2 class="section-title">
+          <span class="lang-block lang-pt active">O que os tutores dizem</span>
+          <span class="lang-block lang-en">What pet parents say</span>
+        </h2>
+        <p class="section-subtitle">
+          <span class="lang-block lang-pt active">
+            Em breve, aqui você verá relatos reais de tutores que confiaram a PawStay para cuidar de seus cães e gatos.
+          </span>
+          <span class="lang-block lang-en">
+            Soon this space will show real reviews from pet owners who trusted PawStay with their dogs and cats.
+          </span>
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <div class="testimonial-placeholder">
+            <span class="lang-block lang-pt active">
+              “Depoimento em breve. Este espaço é reservado para clientes que desejarem compartilhar sua experiência com a PawStay.”
+            </span>
+            <span class="lang-block lang-en">
+              “Testimonial coming soon. This space is reserved for clients who want to share their experience with PawStay.”
+            </span>
+          </div>
+          <div class="testimonial-pet">
+            <span class="lang-block lang-pt active">Tutor(a) · Hamilton</span>
+            <span class="lang-block lang-en">Pet parent · Hamilton</span>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-placeholder">
+            <span class="lang-block lang-pt active">
+              “Depois dos primeiros atendimentos, os melhores comentários serão adicionados aqui para ajudar outros tutores a escolherem com segurança.”
+            </span>
+            <span class="lang-block lang-en">
+              “After the first bookings, the best comments will appear here to help other pet parents choose with confidence.”
+            </span>
+          </div>
+          <div class="testimonial-pet">
+            <span class="lang-block lang-pt active">Tutor(a) · Ancaster</span>
+            <span class="lang-block lang-en">Pet parent · Ancaster</span>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-placeholder">
+            <span class="lang-block lang-pt active">
+              “Quer que o seu depoimento apareça aqui? É só autorizar quando encerrarmos o serviço do seu pet.”
+            </span>
+            <span class="lang-block lang-en">
+              “Want your feedback to appear here? Just authorize it when we complete your pet’s service.”
+            </span>
+          </div>
+          <div class="testimonial-pet">
+            <span class="lang-block lang-pt active">Tutor(a) · Região</span>
+            <span class="lang-block lang-en">Pet parent · Area</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contato">
+      <div class="contact">
+        <div class="contact-header">
+          <h2>
+            <span class="lang-block lang-pt active">Fale com a PawStay</span>
+            <span class="lang-block lang-en">Contact PawStay</span>
+          </h2>
+          <p>
+            <span class="lang-block lang-pt active">
+              Conte um pouco sobre o seu pet, as datas em que você precisa de ajuda e o tipo de serviço desejado.
+              Vou analisar com carinho e responder o mais rápido possível.
+            </span>
+            <span class="lang-block lang-en">
+              Tell me about your pet, the dates when you need help and what kind of service you’re looking for.
+              I’ll review everything carefully and reply as soon as possible.
+            </span>
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-card-title">
+              <span class="icon">📱</span>
+              <span>WhatsApp</span>
+            </div>
+            <p>+1 365-883-3886</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-title">
+              <span class="icon">📧</span>
+              <span>E-mail</span>
+            </div>
+            <p>pawstay@gmail.com</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-title">
+              <span class="icon">🌐</span>
+              <span class="lang-block lang-pt active">Redes sociais</span>
+              <span class="lang-block lang-en">Social media</span>
+            </div>
+            <p>@pawstay – Instagram, TikTok, Facebook</p>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <a href="https://wa.me/13658833886" target="_blank" class="btn-primary">
+            <span class="lang-block lang-pt active">Iniciar conversa no WhatsApp</span>
+            <span class="lang-block lang-en">Start chat on WhatsApp</span>
+          </a>
+          <a href="termos-e-faq.html" class="btn-outline" style="background:#f9fafb;color:#0f172a;">
+            <span class="lang-block lang-pt active">Ver Termos & FAQ</span>
+            <span class="lang-block lang-en">View Terms & FAQ</span>
+          </a>
+        </div>
+
+        <form class="contact-form">
+        <div class="form-row">
+            <div class="form-group">
+            <label>
+                <span class="lang-block lang-pt active">Nome do tutor</span>
+                <span class="lang-block lang-en">Your name</span>
+            </label>
+            <input
+                type="text"
+                name="nome"
+                placeholder="Seu nome"
+                data-placeholder-pt="Seu nome"
+                data-placeholder-en="Your name"
+            />
+            </div>
+            <div class="form-group">
+            <label>
+                <span class="lang-block lang-pt active">Tipo de pet</span>
+                <span class="lang-block lang-en">Pet type</span>
+            </label>
+            <select name="tipo-pet">
+                <option value="dog">🐶 Dog</option>
+                <option value="cat">🐱 Cat</option>
+                <option value="other">🐾 Other</option>
+            </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+            <label>
+                <span class="lang-block lang-pt active">Bairro / Cidade</span>
+                <span class="lang-block lang-en">Neighbourhood / City</span>
+            </label>
+            <input
+                type="text"
+                name="bairro"
+                placeholder="Hamilton, Ancaster..."
+                data-placeholder-pt="Hamilton, Ancaster..."
+                data-placeholder-en="Hamilton, Ancaster..."
+            />
+            </div>
+            <div class="form-group">
+            <label>
+                <span class="lang-block lang-pt active">Datas aproximadas</span>
+                <span class="lang-block lang-en">Approximate dates</span>
+            </label>
+            <input
+                type="text"
+                name="datas"
+                placeholder="Ex.: 10–15 de julho"
+                data-placeholder-pt="Ex.: 10–15 de julho"
+                data-placeholder-en="Eg: July 10–15"
+            />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>
+            <span class="lang-block lang-pt active">Mensagem</span>
+            <span class="lang-block lang-en">Message</span>
+            </label>
+            <textarea
+            name="mensagem"
+            placeholder="Conte rapidamente sobre o seu pet e o serviço desejado."
+            data-placeholder-pt="Conte rapidamente sobre o seu pet e o serviço desejado."
+            data-placeholder-en="Briefly tell us about your pet and the service you need."
+            ></textarea>
+        </div>
+
+        <button type="button" class="btn-form">
+            <span class="lang-block lang-pt active">Enviar mensagem (demonstração)</span>
+            <span class="lang-block lang-en">Send message (demo)</span>
+        </button>
+
+        <p class="contact-note">
+            <span class="lang-block lang-pt active">
+            Este formulário é ilustrativo. Para resposta mais rápida, use o WhatsApp.
+            </span>
+            <span class="lang-block lang-en">
+            This form is illustrative. For the fastest response, please use WhatsApp.
+            </span>
+        </p>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <div class="logo-icon">
+                <img src="img/logo.png" alt="PawStay – pet sitter em Hamilton" class="logo-img" />
+            </div>
+            <div class="footer-logo-text">
+                <span>PawStay</span>
+                <span class="lang-block lang-pt">Serviço profissional de pet sitter em Hamilton e região.</span>
+                <span class="lang-block lang-en">Professional pet sitter in Hamilton and area.</span>
+            </div>
+        </div>
+      <div>
+        <div class="footer-column-title">
+          <span class="lang-block lang-pt active">Links Rápidos</span>
+          <span class="lang-block lang-en">Quick Links</span>
+        </div>
+        <div class="footer-links">
+          <a href="#inicio">
+            <span class="lang-block lang-pt active">Início</span>
+            <span class="lang-block lang-en">Home</span>
+          </a>
+          <a href="#servicos">
+            <span class="lang-block lang-pt active">Serviços</span>
+            <span class="lang-block lang-en">Services</span>
+          </a>
+          <a href="#como-funciona">
+            <span class="lang-block lang-pt active">Como Funciona</span>
+            <span class="lang-block lang-en">How It Works</span>
+          </a>
+          <a href="#sobre">
+            <span class="lang-block lang-pt active">Sobre</span>
+            <span class="lang-block lang-en">About</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-column-title">
+          <span class="lang-block lang-pt active">Mais Informações</span>
+          <span class="lang-block lang-en">More Info</span>
+        </div>
+        <div class="footer-links">
+          <a href="#depoimentos">
+            <span class="lang-block lang-pt active">Depoimentos</span>
+            <span class="lang-block lang-en">Testimonials</span>
+          </a>
+          <a href="#area-atendimento">
+            <span class="lang-block lang-pt active">Área de Atendimento</span>
+            <span class="lang-block lang-en">Service Area</span>
+          </a>
+          <a href="termos-e-faq.html">
+            <span class="lang-block lang-pt active">Termos & FAQ</span>
+            <span class="lang-block lang-en">Terms & FAQ</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-column-title">
+          <span class="lang-block lang-pt active">Contato</span>
+          <span class="lang-block lang-en">Contact</span>
+        </div>
+        <div class="footer-links">
+          <span>WhatsApp: +1 365-883-3886</span>
+          <span>E-mail: pawstay@gmail.com</span>
+          <span>
+            <span class="lang-block lang-pt active">Localização: Hamilton & Região – ON</span>
+            <span class="lang-block lang-en">Location: Hamilton & Area – ON</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © 2025 PawStay. 
+        <span class="lang-block lang-pt active">Todos os direitos reservados.</span>
+        <span class="lang-block lang-en">All rights reserved.</span>
+      </div>
+      <div class="footer-flags">
+        <span>🇧🇷</span><span>🇨🇦</span>
+        <span style="margin-left:6px;">
+          <span class="lang-block lang-pt active">Feito com ❤ para pets.</span>
+          <span class="lang-block lang-en">Made with ❤ for pets.</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle language (PT / EN)
+    const langButtons = document.querySelectorAll(".lang-btn");
+    const langBlocksPt = document.querySelectorAll(".lang-pt");
+    const langBlocksEn = document.querySelectorAll(".lang-en");
+    const langPlaceholders = document.querySelectorAll(
+        "[data-placeholder-pt][data-placeholder-en]"
+    );
+
+
+    function setLanguage(lang) {
+    document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+
+    if (lang === "pt") {
+        langBlocksPt.forEach(el => el.classList.add("active"));
+        langBlocksEn.forEach(el => el.classList.remove("active"));
+    } else {
+        langBlocksPt.forEach(el => el.classList.remove("active"));
+        langBlocksEn.forEach(el => el.classList.add("active"));
+    }
+
+    // Atualiza botões de idioma
+    langButtons.forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+
+    // Atualiza placeholders dos campos
+    langPlaceholders.forEach(el => {
+        if (lang === "pt") {
+        el.placeholder = el.dataset.placeholderPt;
+        } else {
+        el.placeholder = el.dataset.placeholderEn;
+        }
+    });
+    }
+
+
+    langButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        setLanguage(btn.dataset.lang);
+      });
+    });
+
+    // Mobile menu
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const header = document.querySelector("header");
+    mobileBtn?.addEventListener("click", () => {
+      header.classList.toggle("mobile-nav-open");
+    });
+
+    // Default language PT
+    setLanguage("pt");
+  </script>
+</body>
+</html>

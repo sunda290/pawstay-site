@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawStay – Termos & FAQ</title>
+  <meta name="description" content="Termos de uso, política de cancelamento e perguntas frequentes da PawStay, serviço de pet sitter em Hamilton." />
+
+  <style>
+    /* ====== RESET BÁSICO ====== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #1f2933;
+      background: #f3f7f3;
+      line-height: 1.6;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ====== CORES ====== */
+    :root {
+      --green-main: #24a148;
+      --green-dark: #1b7c36;
+      --green-light: #e7f7ec;
+      --bg-soft: #f5faf7;
+      --gray-700: #1f2933;
+      --gray-500: #6b7280;
+      --gray-100: #f3f4f6;
+      --border-soft: #e5e7eb;
+      --accent-yellow: #ffb627;
+      --danger: #e11d48;
+      --white: #ffffff;
+    }
+
+    /* ====== LAYOUT GLOBAL ====== */
+    #top {
+      background: #ffffff;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    }
+
+    .logo-text span:first-child {
+    font-weight: 700;
+    font-size: 20px;
+    }
+
+    /* Tudo que NÃO for o primeiro span (PT ou EN) fica menor */
+    .logo-text span:not(:first-child) {
+    font-size: 11px;
+    color: #6b7280;
+    }
+
+    nav#mainNav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+    }
+    .nav-link {
+      position: relative;
+      padding: 4px 0;
+      color: #4b5563;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover {
+      color: var(--green-main);
+    }
+    .nav-link.active {
+      color: var(--green-main);
+      font-weight: 600;
+    }
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 24px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--green-main);
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-right: 10px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+    .lang-switcher-label {
+      display: none; /* fica só o seletor com bandeiras */
+    }
+    .lang-buttons {
+      display: inline-flex;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+    }
+    .lang-btn {
+      border: none;
+      padding: 4px 10px;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: transparent;
+      color: #6b7280;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .lang-btn span.flag {
+      font-size: 15px;
+    }
+    .lang-btn.active {
+      background: #ffffff;
+      color: var(--green-main);
+      font-weight: 600;
+    }
+
+    .btn-whatsapp-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #22c55e;
+      color: #ffffff;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 8px 18px rgba(34, 197, 94, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .btn-whatsapp-header:hover {
+      transform: translateY(-1px);
+      background: #16a34a;
+      box-shadow: 0 10px 24px rgba(22, 163, 74, 0.4);
+    }
+
+    /* HERO TERMMOS */
+    .hero-terms {
+      background: radial-gradient(circle at top left, #dcfce7 0, #f5faf7 55%);
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+    .hero-terms-inner {
+      padding: 56px 0 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.3fr) minmax(0, 1.7fr);
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e7f7ec;
+      color: var(--green-dark);
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+    .hero-title {
+      font-size: 32px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      color: var(--gray-700);
+    }
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+    }
+    .hero-highlight-box {
+      border-radius: 14px;
+      background: #ffffff;
+      padding: 14px 16px;
+      border: 1px solid #d1fae5;
+      font-size: 13px;
+      color: #065f46;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(16,185,129,0.08);
+    }
+    .hero-highlight-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .hero-side-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      box-shadow: 0 20px 40px rgba(15,118,110,0.13);
+      border: 1px solid #e5f5eb;
+    }
+    .hero-side-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .hero-side-text {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-bottom: 12px;
+    }
+    .hero-side-list {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--gray-700);
+    }
+    .hero-side-list li::before {
+      content: "• ";
+      color: var(--green-main);
+      font-weight: 700;
+    }
+
+    /* CONTEÚDO TERMOS & FAQ */
+    main {
+      padding: 40px 0 64px;
+    }
+    .terms-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 32px;
+      align-items: flex-start;
+    }
+    .terms-section {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 24px 26px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.04);
+      margin-bottom: 24px;
+    }
+    .terms-section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--gray-700);
+    }
+    .terms-section h3 {
+      font-size: 16px;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      color: var(--gray-700);
+    }
+    .terms-section p {
+      font-size: 14px;
+      color: var(--gray-500);
+      margin-bottom: 8px;
+    }
+    .terms-section ul {
+      margin-left: 16px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+    .terms-section ul li {
+      margin-bottom: 4px;
+    }
+    .terms-note {
+      font-size: 12px;
+      color: var(--gray-500);
+      margin-top: 8px;
+    }
+    .terms-highlight {
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .faq-aside {
+      position: sticky;
+      top: 96px;
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .faq-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 20px 20px 18px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 24px rgba(15,23,42,0.05);
+    }
+    .faq-card h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .faq-item {
+      border-top: 1px solid #e5e7eb;
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+    .faq-item h3 {
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: var(--gray-700);
+    }
+    .faq-item p {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+    .faq-contact {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+    .faq-contact a {
+      color: var(--green-main);
+      font-weight: 500;
+    }
+
+    .badge-small {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: #ecfdf5;
+      color: #047857;
+      margin-bottom: 6px;
+    }
+
+    .alert-box {
+      background: #fffbeb;
+      border: 1px solid #facc15;
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #854d0e;
+      margin-top: 10px;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      font-size: 12px;
+      color: #374151;
+      background: #ffffff;
+      cursor: pointer;
+      transition: border 0.2s ease, color 0.2s ease, background 0.2s ease;
+    }
+    .btn-outline:hover {
+      border-color: var(--green-main);
+      color: var(--green-main);
+      background: #f9fafb;
+    }
+
+    /* RODAPÉ */
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      padding: 32px 0 20px;
+      margin-top: 10px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.8fr) repeat(2, minmax(0,1fr)) minmax(0,1.4fr);
+      gap: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #1f2937;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .footer-logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .footer-logo-text span:nth-child(1) {
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .footer-logo-text span:nth-child(2) {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    .footer-desc {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-top: 8px;
+      max-width: 260px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .social-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .footer-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .footer-links {
+      list-style: none;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    .footer-links li {
+      margin-bottom: 4px;
+    }
+    .footer-links a:hover {
+      color: #e5e7eb;
+    }
+    .footer-contact {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    .footer-contact div {
+      margin-bottom: 4px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+    .footer-lang-flags {
+      display: flex;
+      gap: 6px;
+    }
+    .footer-flag {
+      width: 26px;
+      height: 20px;
+      border-radius: 4px;
+      background: #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    /* MULTI-LÍNGUA */
+    .lang-block {
+      display: none;
+    }
+    .lang-pt {
+      /* por padrão, começamos em PT */
+      display: inline;
+    }
+
+    /* ====== RESPONSIVO ====== */
+    @media (max-width: 900px) {
+      .header-inner {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      nav#mainNav {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .hero-terms-inner {
+        grid-template-columns: minmax(0,1fr);
+        padding-top: 32px;
+      }
+      .terms-layout {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .faq-aside {
+        position: static;
+      }
+      .footer-grid {
+        grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body data-lang="pt">
+<header id="top">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+            <img src="img/logo.png" alt="PawStay – pet sitter em Hamilton" class="logo-img" />
+        </div>
+        <div class="logo-text">
+            <span>PawStay</span>
+            <span class="lang-block lang-pt">Pet sitter em<br>Hamilton &amp; Região</span>
+            <span class="lang-block lang-en">Pet sitter in Hamilton &amp; Area</span>
+        </div>
+      </a>
+      <nav id="mainNav">
+        <div class="nav-links">
+          <a href="index.html#hero" class="nav-link">
+            <span class="lang-block lang-pt">Início</span>
+            <span class="lang-block lang-en">Home</span>
+          </a>
+          <a href="index.html#services" class="nav-link">
+            <span class="lang-block lang-pt">Serviços</span>
+            <span class="lang-block lang-en">Services</span>
+          </a>
+          <a href="index.html#how-it-works" class="nav-link">
+            <span class="lang-block lang-pt">Como Funciona</span>
+            <span class="lang-block lang-en">How It Works</span>
+          </a>
+          <a href="index.html#testimonials" class="nav-link">
+            <span class="lang-block lang-pt">Depoimentos</span>
+            <span class="lang-block lang-en">Testimonials</span>
+          </a>
+          <a href="index.html#service-area" class="nav-link">
+            <span class="lang-block lang-pt">Área de Atendimento</span>
+            <span class="lang-block lang-en">Service Area</span>
+          </a>
+          <a href="index.html#contact" class="nav-link">
+            <span class="lang-block lang-pt">Contato</span>
+            <span class="lang-block lang-en">Contact</span>
+          </a>
+          <a href="termos-e-faq.html" class="nav-link active">
+            <span class="lang-block lang-pt">Termos & FAQ</span>
+            <span class="lang-block lang-en">Terms & FAQ</span>
+          </a>
+        </div>
+
+        <div class="lang-switcher">
+          <span class="lang-switcher-label lang-block lang-pt">Idioma:</span>
+          <span class="lang-switcher-label lang-block lang-en">Language:</span>
+          <div class="lang-buttons">
+            <button type="button" class="lang-btn active" id="btn-pt" data-lang="pt">
+              <span class="flag">🇧🇷</span><span>PT</span>
+            </button>
+            <button type="button" class="lang-btn" id="btn-en" data-lang="en">
+              <span class="flag">🇨🇦</span><span>EN</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="https://wa.me/13658833886" target="_blank" class="btn-whatsapp-header">
+          <span>💬</span>
+          <span class="lang-block lang-pt">Chamar no WhatsApp</span>
+          <span class="lang-block lang-en">Message on WhatsApp</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero-terms" id="hero-terms">
+  <div class="container">
+    <div class="hero-terms-inner">
+      <div>
+        <div class="hero-badge">
+          <span>📜</span>
+          <span class="lang-block lang-pt">Transparência & Segurança para você e seu pet</span>
+          <span class="lang-block lang-en">Transparency & Safety for you and your pet</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="lang-block lang-pt">Termos de Uso, Política de Cancelamento & FAQ</span>
+          <span class="lang-block lang-en">Terms of Service, Cancellation Policy & FAQ</span>
+        </h1>
+        <p class="hero-subtitle">
+          <span class="lang-block lang-pt">
+            Nesta página você encontra todas as regras importantes da PawStay: como funcionam os agendamentos,
+            cancelamentos, acesso à sua casa, responsabilidade em emergências e as dúvidas mais comuns.
+          </span>
+          <span class="lang-block lang-en">
+            On this page you’ll find all key PawStay rules: how bookings work, cancellations,
+            access to your home, responsibility in emergencies, and the most common questions.
+          </span>
+        </p>
+        <div class="hero-highlight-box">
+          <div class="hero-highlight-icon">✅</div>
+          <div>
+            <p>
+              <span class="lang-block lang-pt">
+                Antes de confirmar qualquer serviço, recomendamos que você leia com atenção estes termos. Ao contratar a PawStay,
+                você declara estar de acordo com estas condições.
+              </span>
+              <span class="lang-block lang-en">
+                Before confirming any service, we recommend that you carefully read these terms. By hiring PawStay,
+                you agree to the conditions described here.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-side-card">
+        <div class="badge-small">
+          <span>🔐</span>
+          <span class="lang-block lang-pt">Resumo rápido</span>
+          <span class="lang-block lang-en">Quick summary</span>
+        </div>
+        <h2 class="hero-side-title">
+          <span class="lang-block lang-pt">Em resumo, o que você está aceitando?</span>
+          <span class="lang-block lang-en">In short, what are you agreeing to?</span>
+        </h2>
+        <p class="hero-side-text">
+          <span class="lang-block lang-pt">
+            A PawStay cuida do seu pet e da sua casa com responsabilidade, mas alguns limites e condições são necessários para proteger todos os envolvidos.
+          </span>
+          <span class="lang-block lang-en">
+            PawStay takes care of your pet and your home responsibly, but some limits and conditions are necessary to protect everyone involved.
+          </span>
+        </p>
+        <ul class="hero-side-list">
+          <li>
+            <span class="lang-block lang-pt">Política clara de cancelamento e reagendamento.</span>
+            <span class="lang-block lang-en">Clear cancellation and rescheduling policy.</span>
+          </li>
+          <li>
+            <span class="lang-block lang-pt">Regras específicas para chaves e acesso à sua casa.</span>
+            <span class="lang-block lang-en">Specific rules for keys and access to your home.</span>
+          </li>
+          <li>
+            <span class="lang-block lang-pt">Limites de responsabilidade e procedimentos em emergências.</span>
+            <span class="lang-block lang-en">Liability limits and emergency procedures.</span>
+          </li>
+          <li>
+            <span class="lang-block lang-pt">Requisitos mínimos de saúde e segurança para o pet.</span>
+            <span class="lang-block lang-en">Minimum health and safety requirements for your pet.</span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <div class="terms-layout">
+      <!-- COLUNA PRINCIPAL -->
+      <div>
+        <!-- 1. Termos Gerais -->
+        <section class="terms-section" id="termos-gerais">
+          <h2>
+            <span class="lang-block lang-pt">1. Termos Gerais de Serviço</span>
+            <span class="lang-block lang-en">1. General Terms of Service</span>
+          </h2>
+
+          <p>
+            <span class="lang-block lang-pt">
+              A PawStay oferece serviços profissionais de pet sitter em Hamilton e região, com foco em visitas na casa do tutor
+              ou diárias na residência do pet sitter. Ao contratar qualquer serviço, você concorda em fornecer informações verdadeiras
+              e completas sobre o seu pet, sua rotina e necessidades especiais.
+            </span>
+            <span class="lang-block lang-en">
+              PawStay provides professional pet sitting services in Hamilton and surrounding areas, focusing on in-home visits
+              and daycare/boarding at the sitter’s home. By hiring any service, you agree to provide true and complete information
+              about your pet, its routine, and any special needs.
+            </span>
+          </p>
+
+          <p>
+            <span class="lang-block lang-pt">
+              Estes termos podem ser atualizados de tempos em tempos. A versão mais recente será sempre publicada nesta página.
+            </span>
+            <span class="lang-block lang-en">
+              These terms may be updated from time to time. The latest version will always be available on this page.
+            </span>
+          </p>
+        </section>
+
+        <!-- 2. Agendamentos, Pagamentos e Cancelamentos -->
+        <section class="terms-section" id="cancelamento">
+          <h2>
+            <span class="lang-block lang-pt">2. Agendamentos, Pagamentos & Política de Cancelamento</span>
+            <span class="lang-block lang-en">2. Bookings, Payments & Cancellation Policy</span>
+          </h2>
+
+          <h3>
+            <span class="lang-block lang-pt">2.1. Agendamentos</span>
+            <span class="lang-block lang-en">2.1. Bookings</span>
+          </h3>
+          <p>
+            <span class="lang-block lang-pt">
+              Os agendamentos são feitos preferencialmente via WhatsApp (+1 365-883-3886) ou e-mail (pawstay@gmail.com).
+              Um serviço só é considerado confirmado após a nossa mensagem de confirmação, com datas, horários, valores
+              e forma de pagamento combinados.
+            </span>
+            <span class="lang-block lang-en">
+              Bookings are preferably made via WhatsApp (+1 365-883-3886) or e-mail (pawstay@gmail.com).
+              A service is only considered confirmed after our written confirmation with agreed dates, times, prices
+              and payment method.
+            </span>
+          </p>
+
+          <h3>
+            <span class="lang-block lang-pt">2.2. Pagamentos</span>
+            <span class="lang-block lang-en">2.2. Payments</span>
+          </h3>
+          <p>
+            <span class="lang-block lang-pt">
+              Os pagamentos podem ser feitos por e-transfer ou outro meio acordado previamente. Em alguns casos,
+              podemos solicitar um depósito antecipado para reservar datas específicas, principalmente em feriados
+              ou períodos de alta demanda.
+            </span>
+            <span class="lang-block lang-en">
+              Payments can be made by e-transfer or another method agreed in advance. In some cases, we may request
+              an upfront deposit to reserve specific dates, especially on holidays or high-demand periods.
+            </span>
+          </p>
+
+          <h3>
+            <span class="lang-block lang-pt">2.3. Política de Cancelamento</span>
+            <span class="lang-block lang-en">2.3. Cancellation Policy</span>
+          </h3>
+          <ul>
+            <li>
+              <span class="lang-block lang-pt">
+                Cancelamentos com <strong>mais de 72 horas</strong> de antecedência: possibilidade de reembolso ou crédito integral
+                para uso em outra data, conforme combinado.
+              </span>
+              <span class="lang-block lang-en">
+                Cancellations made with <strong>more than 72 hours</strong> in advance: full refund or credit towards a future booking,
+                as agreed.
+              </span>
+            </li>
+            <li>
+              <span class="lang-block lang-pt">
+                Cancelamentos entre <strong>72h e 24h</strong> antes do início do serviço: pode ser cobrada uma taxa de até 50% do valor
+                total para compensar o bloqueio da agenda.
+              </span>
+              <span class="lang-block lang-en">
+                Cancellations between <strong>72h and 24h</strong> before the start of the service: a fee of up to 50% of the total value
+                may be charged to compensate for the reserved time slot.
+              </span>
+            </li>
+            <li>
+              <span class="lang-block lang-pt">
+                Cancelamentos com <strong>menos de 24h</strong> ou ausência no horário combinado (“no-show”):
+                poderá ser cobrado o valor total do serviço agendado.
+              </span>
+              <span class="lang-block lang-en">
+                Cancellations with <strong>less than 24h</strong> or if no one is available at the scheduled time (“no-show”):
+                the full amount of the booked service may be charged.
+              </span>
+            </li>
+          </ul>
+
+          <p class="terms-note">
+            <span class="lang-block lang-pt">
+              Situações excepcionais (doença grave, imprevistos comprovados etc.) podem ser avaliadas caso a caso, sempre que possível.
+            </span>
+            <span class="lang-block lang-en">
+              Exceptional situations (serious illness, proven emergencies etc.) may be evaluated on a case-by-case basis whenever possible.
+            </span>
+          </p>
+        </section>
+
+        <!-- 3. Regras para Chaves e Acesso à Casa -->
+        <section class="terms-section" id="chaves">
+          <h2>
+            <span class="lang-block lang-pt">3. Chaves, Acesso à Casa & Segurança</span>
+            <span class="lang-block lang-en">3. Keys, Home Access & Security</span>
+          </h2>
+
+          <p>
+            <span class="lang-block lang-pt">
+              Entendemos que confiar as chaves da sua casa é algo sério. Por isso, adotamos regras claras para garantir
+              segurança e transparência em todo o processo.
+            </span>
+            <span class="lang-block lang-en">
+              We understand that entrusting your house keys is serious. That’s why we use clear rules to ensure safety
+              and transparency throughout the process.
+            </span>
+          </p>
+
+          <h3>
+            <span class="lang-block lang-pt">3.1. Entrega e guarda das chaves</span>
+            <span class="lang-block lang-en">3.1. Key delivery and storage</span>
+          </h3>
+          <ul>
+            <li>
+              <span class="lang-block lang-pt">
+                As chaves podem ser entregues em mãos antes do início do serviço ou deixadas em local combinado (ex.: lockbox).
+              </span>
+              <span class="lang-block lang-en">
+                Keys can be handed over in person before the service starts or left in a previously agreed location (e.g., lockbox).
+              </span>
+            </li>
+            <li>
+              <span class="lang-block lang-pt">
+                Durante o período de cuidado, as chaves são mantidas em local seguro e nunca identificadas com nome completo ou endereço.
+              </span>
+              <span class="lang-block lang-en">
+                During the care period, keys are kept in a safe place and never labeled with your full name or address.
+              </span>
+            </li>
+            <li>
+              <span class="lang-block lang-pt">
+                Após o término do serviço, as chaves serão devolvidas conforme combinado: em mãos, no lockbox ou outro método acordado.
+              </span>
+              <span class="lang-block lang-en">
+                After the service ends, keys will be returned as agreed: in person, in the lockbox, or another agreed method.
+              </span>
+            </li>
+          </ul>
+
+          <h3>
+            <span class="lang-block lang-pt">3.2. Acesso à casa</span>
+            <span class="lang-block lang-en">3.2. Home access</span>
+          </h3>
+          <ul>
+            <li>
+              <span class="lang-block lang-pt">
+                O acesso à sua casa será feito exclusivamente para os serviços contratados (cuidado com o pet e, se combinado,
+                pequenas tarefas extras como regar plantas ou recolher correspondência).
+              </span>
+              <span class="lang-block lang-en">
+                Access to your home is used exclusively for the contracted services (pet care and, if agreed, small extra tasks like
+                watering plants or collecting mail).
+              </span>
+            </li>
+            <li>
+              <span class="lang-block lang-pt">
+                Não autorizamos a presença de terceiros não informados pelo tutor durante as visitas.
+              </span>
+              <span class="lang-block lang-en">
+                We do not allow third parties not previously informed by the tutor to be present during visits.
+              </span>
+            </li>
+            <li>
+              <span class="lang-block lang-pt">
+                Portas e janelas serão sempre trancadas ao sair, de acordo com a orientação do tutor.
+              </span>
+              <span class="lang-block lang-en">
+                Doors and windows will always be properly locked when leaving, following the tutor’s instructions.
+              </span>
+            </li>
+          </ul>
+
+          <div class="alert-box">
+            <span class="lang-block lang-pt">
+              Importante: qualquer sistema de alarme, câmeras internas ou regras específicas de segurança devem ser informados com antecedência.
+              O mau funcionamento de equipamentos de terceiros (ex.: alarmes, fechaduras eletrônicas) não é de responsabilidade da PawStay.
+            </span>
+            <span class="lang-block lang-en">
+              Important: any alarm system, indoor cameras or specific security rules must be informed in advance.
+              Malfunctions of third-party equipment (e.g., alarms, smart locks) are not PawStay’s responsibility.
+            </span>
+          </div>
+        </section>
+
+        <!-- 4. Saúde, Vacinação & Limites de Responsabilidade -->
+        <section class="terms-section" id="responsabilidade">
+          <h2>
+            <span class="lang-block lang-pt">4. Saúde, Vacinação & Limites de Responsabilidade</span>
+            <span class="lang-block lang-en">4. Health, Vaccination & Liability Limits</span>
+          </h2>
+
+          <h3>
+            <span class="lang-block lang-pt">4.1. Condições de saúde do pet</span>
+            <span class="lang-block lang-en">4.1. Pet health conditions</span>
+          </h3>
+          <ul>
+            <li>
+              <span class="lang-block lang-pt">
+                O tutor é responsável por informar qualquer condição de saúde, alergia, restrição alimentar, uso de medicação
+                e histórico de comportamento agressivo ou reatividade.
+              </span>
+              <span class="lang-block lang-en">
+                The tutor is responsible for informing any health condition, allergies, dietary restrictions, medication use,
+                and any history of aggressive or reactive behavior.
+              </span>
+            </li>
+            <li>
+              <span class="lang-block lang-pt">
+                Recomenda-se que o pet esteja com as vacinas em dia e sob acompanhamento veterinário regular.
+              </span>
+              <span class="lang-block lang-en">
+                We recommend that your pet is up to date on vaccines and under regular veterinary care.
+              </span>
+            </li>
+          </ul>
+
+          <h3>
+            <span class="lang-block lang-pt">4.2. Administração de medicação</span>
+            <span class="lang-block lang-en">4.2. Medication administration</span>
+          </h3>
+          <p>
+            <span class="lang-block lang-pt">
+              A PawStay pode administrar medicação oral ou tópica conforme orientação do tutor e do veterinário, desde que
+              todas as instruções sejam claramente fornecidas. Não realizamos procedimentos invasivos ou que exijam
+              conhecimento médico especializado.
+            </span>
+            <span class="lang-block lang-en">
+              PawStay may administer oral or topical medication following the tutor’s and veterinarian’s instructions,
+              as long as all directions are clearly provided. We do not perform invasive procedures or anything requiring
+              specialized medical training.
+            </span>
+          </p>
+
+          <h3>
+            <span class="lang-block lang-pt">4.3. Limites de responsabilidade</span>
+            <span class="lang-block lang-en">4.3. Liability limits</span>
+          </h3>
+          <p>
+            <span class="lang-block lang-pt">
+              A PawStay zela pela segurança do seu pet e da sua casa, mas alguns fatores fogem ao nosso controle
+              (doenças pré-existentes, reações imprevisíveis, falhas de equipamentos, eventos externos etc.).
+              Não podemos garantir a eliminação total de riscos.
+            </span>
+            <span class="lang-block lang-en">
+              PawStay takes reasonable care of your pet and your home, but some factors are beyond our control
+              (pre-existing diseases, unpredictable reactions, equipment failures, external events, etc.).
+              We cannot guarantee the complete elimination of all risks.
+            </span>
+          </p>
+
+          <p>
+            <span class="lang-block lang-pt">
+              Ao contratar o serviço, o tutor concorda que a responsabilidade da PawStay é limitada ao valor do serviço contratado,
+              exceto quando a lei aplicável determinar de outra forma.
+            </span>
+            <span class="lang-block lang-en">
+              By hiring the service, the tutor agrees that PawStay’s liability is limited to the value of the contracted service,
+              except where applicable law provides otherwise.
+            </span>
+          </p>
+        </section>
+
+        <!-- 5. Situações de Emergência -->
+        <section class="terms-section" id="emergencias">
+          <h2>
+            <span class="lang-block lang-pt">5. Situações de Emergência</span>
+            <span class="lang-block lang-en">5. Emergency Situations</span>
+          </h2>
+
+          <p>
+            <span class="lang-block lang-pt">
+              Em caso de emergência envolvendo o pet (doença súbita, acidente, piora de condição pré-existente etc.),
+              a prioridade será sempre a segurança e o bem-estar do animal.
+            </span>
+            <span class="lang-block lang-en">
+              In case of an emergency involving your pet (sudden illness, accident, worsening of a pre-existing condition, etc.),
+              the priority will always be the pet’s safety and well-being.
+            </span>
+          </p>
+
+          <ul>
+            <li>
+              <span class="lang-block lang-pt">
+                Sempre que possível, entraremos em contato com o tutor e seguiremos a orientação indicada por você
+                (clínica veterinária de preferência, profissional de confiança etc.).
+              </span>
+              <span class="lang-block lang-en">
+                Whenever possible, we will contact the tutor and follow your instructions
+                (preferred veterinary clinic, trusted professional, etc.).
+              </span>
+            </li>
+            <li>
+              <span class="lang-block lang-pt">
+                Caso não seja possível falar com você em tempo hábil, poderemos encaminhar o pet para a clínica disponível
+                mais próxima, tomando as decisões necessárias em caráter de urgência.
+              </span>
+              <span class="lang-block lang-en">
+                If we cannot reach you in a reasonable time, we may take your pet to the nearest available vet clinic,
+                making urgent decisions as needed.
+              </span>
+            </li>
+            <li>
+              <span class="lang-block lang-pt">
+                Despesas veterinárias são de responsabilidade do tutor, salvo acordo expresso em contrário.
+              </span>
+              <span class="lang-block lang-en">
+                Veterinary expenses are the tutor’s responsibility, unless expressly agreed otherwise.
+              </span>
+            </li>
+          </ul>
+
+          <p class="terms-note">
+            <span class="lang-block lang-pt">
+              Recomendamos que você deixe por escrito os contatos de emergência, a clínica de preferência e qualquer instrução específica
+              sobre autorização de procedimentos.
+            </span>
+            <span class="lang-block lang-en">
+              We recommend that you leave written emergency contacts, preferred vet clinic and any specific instructions
+              about authorization for procedures.
+            </span>
+          </p>
+        </section>
+
+        <!-- 6. Uso de Imagem & Comunicação -->
+        <section class="terms-section" id="imagens">
+          <h2>
+            <span class="lang-block lang-pt">6. Uso de Imagem & Comunicação</span>
+            <span class="lang-block lang-en">6. Image Use & Communication</span>
+          </h2>
+
+          <p>
+            <span class="lang-block lang-pt">
+              Durante as visitas, costumamos enviar fotos e vídeos do seu pet pelo WhatsApp para que você acompanhe o dia a dia.
+              Essas mídias são usadas exclusivamente para comunicação com o tutor, a menos que você autorize o uso em redes sociais.
+            </span>
+            <span class="lang-block lang-en">
+              During visits, we usually send photos and videos of your pet via WhatsApp so you can follow their routine.
+              These media files are used exclusively for communication with you, unless you authorize their use on social media.
+            </span>
+          </p>
+
+          <p>
+            <span class="lang-block lang-pt">
+              Qualquer publicação em Instagram, TikTok ou outras plataformas será feita apenas com a sua autorização prévia
+              (por escrito ou mensagem registrada).
+            </span>
+            <span class="lang-block lang-en">
+              Any posts on Instagram, TikTok or other platforms will only be made with your prior authorization
+              (in writing or via recorded message).
+            </span>
+          </p>
+        </section>
+
+        <!-- 7. Encerramento do Serviço -->
+        <section class="terms-section" id="encerramento">
+          <h2>
+            <span class="lang-block lang-pt">7. Encerramento do Serviço</span>
+            <span class="lang-block lang-en">7. Service Termination</span>
+          </h2>
+
+          <p>
+            <span class="lang-block lang-pt">
+              A PawStay reserva-se o direito de encerrar ou recusar um serviço caso:
+            </span>
+            <span class="lang-block lang-en">
+              PawStay reserves the right to terminate or refuse a service if:
+            </span>
+          </p>
+          <ul>
+            <li>
+              <span class="lang-block lang-pt">
+                o pet apresente comportamento agressivo grave que coloque em risco a segurança de pessoas ou de outros animais;
+              </span>
+              <span class="lang-block lang-en">
+                the pet shows serious aggressive behavior that puts the safety of people or other animals at risk;
+              </span>
+            </li>
+            <li>
+              <span class="lang-block lang-pt">
+                as condições de higiene ou segurança do local sejam inadequadas;
+              </span>
+              <span class="lang-block lang-en">
+                hygiene or safety conditions at the location are inadequate;
+              </span>
+            </li>
+            <li>
+              <span class="lang-block lang-pt">
+                haja falta de informações essenciais ou descumprimento reiterado dos termos aqui estabelecidos.
+              </span>
+              <span class="lang-block lang-en">
+                there is lack of essential information or repeated violation of these terms.
+              </span>
+            </li>
+          </ul>
+
+          <p>
+            <span class="lang-block lang-pt">
+              Nesses casos, buscaremos sempre uma solução segura e justa para o pet e para o tutor, explicando os motivos da decisão.
+            </span>
+            <span class="lang-block lang-en">
+              In such cases, we will always seek a safe and fair solution for both the pet and the tutor, explaining the reasons
+              for our decision.
+            </span>
+          </p>
+        </section>
+      </div>
+
+      <!-- COLUNA FAQ / LATERAL -->
+      <aside class="faq-aside">
+        <div class="faq-card" id="faq">
+          <h2>
+            <span class="lang-block lang-pt">Perguntas Frequentes (FAQ)</span>
+            <span class="lang-block lang-en">Frequently Asked Questions (FAQ)</span>
+          </h2>
+
+          <div class="faq-item">
+            <h3>
+              <span class="lang-block lang-pt">Meu pet precisa estar vacinado?</span>
+              <span class="lang-block lang-en">Does my pet need to be vaccinated?</span>
+            </h3>
+            <p>
+              <span class="lang-block lang-pt">
+                Recomendamos fortemente que o pet esteja com as vacinas em dia, principalmente em serviços que envolvam
+                contato com outros animais ou passeios externos. Informe sempre o status de vacinação ao agendar.
+              </span>
+              <span class="lang-block lang-en">
+                We strongly recommend that your pet is up to date on vaccines, especially for services involving outdoor walks
+                or contact with other animals. Please inform us of the vaccination status when booking.
+              </span>
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>
+              <span class="lang-block lang-pt">Vocês cuidam de cães de grande porte?</span>
+              <span class="lang-block lang-en">Do you take care of large dogs?</span>
+            </h3>
+            <p>
+              <span class="lang-block lang-pt">
+                Sim, desde que o cão seja manejável na guia e que você informe qualquer histórico de reatividade
+                ou comportamento agressivo. Em alguns casos, podemos recusar o serviço se houver risco à segurança.
+              </span>
+              <span class="lang-block lang-en">
+                Yes, as long as the dog is manageable on leash and you inform us of any history of reactivity
+                or aggression. In some cases we may decline the service if there is a safety risk.
+              </span>
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>
+              <span class="lang-block lang-pt">Vocês administram medicação?</span>
+              <span class="lang-block lang-en">Do you administer medication?</span>
+            </h3>
+            <p>
+              <span class="lang-block lang-pt">
+                Sim, podemos administrar medicação oral ou tópica seguindo suas instruções e as do veterinário.
+                Não realizamos procedimentos invasivos (injeções, soro etc.).
+              </span>
+              <span class="lang-block lang-en">
+                Yes, we can give oral or topical medication following your and your vet’s instructions.
+                We do not perform invasive procedures (injections, IV fluids, etc.).
+              </span>
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>
+              <span class="lang-block lang-pt">Vocês dormem na casa do tutor?</span>
+              <span class="lang-block lang-en">Do you stay overnight at the tutor’s home?</span>
+            </h3>
+            <p>
+              <span class="lang-block lang-pt">
+                Dependendo da disponibilidade e da necessidade do pet, é possível avaliar pacotes com pernoite.
+                Isso deve ser combinado caso a caso, com valores diferenciados.
+              </span>
+              <span class="lang-block lang-en">
+                Depending on availability and your pet’s needs, we may offer overnight stays.
+                This must be discussed in advance and will have specific pricing.
+              </span>
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>
+              <span class="lang-block lang-pt">Como funciona o pagamento?</span>
+              <span class="lang-block lang-en">How does payment work?</span>
+            </h3>
+            <p>
+              <span class="lang-block lang-pt">
+                Normalmente o pagamento é feito por e-transfer ou outro meio combinado. Em alguns casos,
+                pode ser solicitado um sinal para reserva da data, especialmente em feriados.
+              </span>
+              <span class="lang-block lang-en">
+                Payment is usually made via e-transfer or another agreed method. In some cases,
+                a deposit may be required to secure the booking, especially on holidays.
+              </span>
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>
+              <span class="lang-block lang-pt">E se meu pet tiver uma emergência?</span>
+              <span class="lang-block lang-en">What if my pet has an emergency?</span>
+            </h3>
+            <p>
+              <span class="lang-block lang-pt">
+                Seguiremos o plano combinado com você (clínica preferencial, contatos de emergência).
+                Se não conseguirmos falar com você e for algo urgente, levaremos o pet ao veterinário disponível
+                mais próximo. As despesas são do tutor.
+              </span>
+              <span class="lang-block lang-en">
+                We will follow the plan agreed with you (preferred clinic, emergency contacts).
+                If we cannot reach you and it is urgent, we will take your pet to the nearest available vet.
+                Costs are the tutor’s responsibility.
+              </span>
+            </p>
+          </div>
+
+          <div class="faq-contact">
+            <p>
+              <span class="lang-block lang-pt">
+                Não encontrou sua dúvida aqui? Fale diretamente comigo pelo WhatsApp ou e-mail:
+              </span>
+              <span class="lang-block lang-en">
+                Didn’t find your question here? Contact me directly via WhatsApp or e-mail:
+              </span>
+            </p>
+            <p>
+              <strong>WhatsApp:</strong> <a href="https://wa.me/13658833886" target="_blank">+1 365-883-3886</a><br />
+              <strong>E-mail:</strong> <a href="mailto:pawstay@gmail.com">pawstay@gmail.com</a>
+            </p>
+            <button class="btn-outline" onclick="window.location.href='index.html#how-it-works'">
+              <span class="lang-block lang-pt">Voltar para “Como Funciona”</span>
+              <span class="lang-block lang-en">Back to “How It Works”</span>
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+        <div class="logo-icon">
+            <img src="img/logo.png" alt="PawStay – pet sitter em Hamilton" class="logo-img" />
+        </div>
+        <div class="footer-logo-text">
+            <span>PawStay</span>
+            <span class="lang-block lang-pt">Serviço profissional de pet sitter em Hamilton e região.</span>
+            <span class="lang-block lang-en">Professional pet sitter in Hamilton and area.</span>
+        </div>
+        </div>
+        <p class="footer-desc">
+          <span class="lang-block lang-pt">
+            Cuidado com carinho para o seu cão ou gato, com visitas em casa, passeios e atualizações em tempo real pelo WhatsApp.
+          </span>
+          <span class="lang-block lang-en">
+            Loving care for your dog or cat with in-home visits, walks and real-time updates through WhatsApp.
+          </span>
+        </p>
+        <div class="footer-social">
+          <div class="social-circle">📸</div>
+          <div class="social-circle">🎵</div>
+          <div class="social-circle">📘</div>
+          <div class="social-circle">💬</div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-title">
+          <span class="lang-block lang-pt">Links Rápidos</span>
+          <span class="lang-block lang-en">Quick Links</span>
+        </h3>
+        <ul class="footer-links">
+          <li><a href="index.html#hero">
+            <span class="lang-block lang-pt">Início</span>
+            <span class="lang-block lang-en">Home</span>
+          </a></li>
+          <li><a href="index.html#services">
+            <span class="lang-block lang-pt">Serviços</span>
+            <span class="lang-block lang-en">Services</span>
+          </a></li>
+          <li><a href="index.html#how-it-works">
+            <span class="lang-block lang-pt">Como Funciona</span>
+            <span class="lang-block lang-en">How It Works</span>
+          </a></li>
+          <li><a href="index.html#about">
+            <span class="lang-block lang-pt">Sobre</span>
+            <span class="lang-block lang-en">About</span>
+          </a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">
+          <span class="lang-block lang-pt">Mais Informações</span>
+          <span class="lang-block lang-en">More Information</span>
+        </h3>
+        <ul class="footer-links">
+          <li><a href="index.html#testimonials">
+            <span class="lang-block lang-pt">Depoimentos</span>
+            <span class="lang-block lang-en">Testimonials</span>
+          </a></li>
+          <li><a href="index.html#service-area">
+            <span class="lang-block lang-pt">Área de Atendimento</span>
+            <span class="lang-block lang-en">Service Area</span>
+          </a></li>
+          <li><a href="index.html#contact">
+            <span class="lang-block lang-pt">Contato</span>
+            <span class="lang-block lang-en">Contact</span>
+          </a></li>
+          <li><a href="termos-e-faq.html">
+            <span class="lang-block lang-pt">Termos & FAQ</span>
+            <span class="lang-block lang-en">Terms & FAQ</span>
+          </a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">
+          <span class="lang-block lang-pt">Contato</span>
+          <span class="lang-block lang-en">Contact</span>
+        </h3>
+        <div class="footer-contact">
+          <div><strong>WhatsApp:</strong> +1 365-883-3886</div>
+          <div><strong>E-mail:</strong> pawstay@gmail.com</div>
+          <div>
+            <strong>
+              <span class="lang-block lang-pt">Localização:</span>
+              <span class="lang-block lang-en">Location:</span>
+            </strong>
+            Hamilton &amp; Região – ON
+          </div>
+        </div>
+        <p class="terms-note" style="margin-top:10px;">
+          <span class="lang-block lang-pt">
+            A PawStay não é clínica veterinária. Em caso de emergência, o veterinário indicado pelo tutor será acionado sempre que possível.
+          </span>
+          <span class="lang-block lang-en">
+            PawStay is not a veterinary clinic. In emergencies we will contact the vet indicated by the tutor whenever possible.
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        <span>© 2025 PawStay.</span>
+        <span class="lang-block lang-pt">Todos os direitos reservados.</span>
+        <span class="lang-block lang-en">All rights reserved.</span>
+      </div>
+      <div class="footer-lang-flags">
+        <div class="footer-flag">🇧🇷</div>
+        <div class="footer-flag">🇨🇦</div>
+      </div>
+      <div>
+        <span class="lang-block lang-pt">Feito com ❤️ para pets.</span>
+        <span class="lang-block lang-en">Made with ❤️ for pets.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Toggle de idioma (mesmo comportamento do index)
+  (function() {
+    const body = document.body;
+    const langBlocks = document.querySelectorAll('.lang-block');
+    const btnPt = document.getElementById('btn-pt');
+    const btnEn = document.getElementById('btn-en');
+
+    function setLanguage(lang) {
+      body.setAttribute('data-lang', lang);
+      langBlocks.forEach(function(el) {
+        if (el.classList.contains('lang-' + lang)) {
+          el.style.display = 'inline';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+
+      if (lang === 'pt') {
+        btnPt.classList.add('active');
+        btnEn.classList.remove('active');
+      } else {
+        btnEn.classList.add('active');
+        btnPt.classList.remove('active');
+      }
+    }
+
+    btnPt.addEventListener('click', function() { setLanguage('pt'); });
+    btnEn.addEventListener('click', function() { setLanguage('en'); });
+
+    // inicia em português
+    setLanguage('pt');
+  })();
+</script>
+</body>
+</html>
