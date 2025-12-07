@@ -1196,82 +1196,80 @@
 <body>
     <header id="top">
     <div class="header-inner">
+        <!-- LOGO + NOME -->
         <div class="brand">
         <div class="logo-icon">
-            <img src="img/logo.png" alt="PawStay logo" style="width:24px;height:24px;object-fit:contain;" />
+            <img src="img/logo.png" alt="PawStay logo" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" />
         </div>
         <div class="brand-text">
             <span class="brand-name">PawStay</span>
-            <span class="brand-tagline">
-            <span class="lang-block lang-pt active">Pet sitter em Hamilton &amp; Região</span>
-            <span class="lang-block lang-en">Pet sitter in Hamilton &amp; Area</span>
-            </span>
+            <span class="brand-tagline lang-block lang-en active">Pet sitter in Hamilton & Area</span>
+            <span class="brand-tagline lang-block lang-pt">Pet sitter em Hamilton & Região</span>
         </div>
         </div>
 
-        <!-- bloco da direita: menu + idioma + WhatsApp -->
-        <div class="header-right">
+        <!-- MENU PRINCIPAL -->
         <nav id="mainNav">
-            <div class="nav-links">
-            <a href="#home" class="nav-link">
-                <span class="lang-block lang-pt active">Início</span>
-                <span class="lang-block lang-en">Home</span>
+        <div class="nav-links">
+            <a href="#top" class="nav-link">
+            <span class="lang-block lang-en active">Home</span>
+            <span class="lang-block lang-pt">Início</span>
             </a>
-            <a href="#services" class="nav-link">
-                <span class="lang-block lang-pt active">Serviços</span>
-                <span class="lang-block lang-en">Services</span>
+            <a href="#servicos" class="nav-link">
+            <span class="lang-block lang-en active">Services</span>
+            <span class="lang-block lang-pt">Serviços</span>
             </a>
-            <a href="#how" class="nav-link">
-                <span class="lang-block lang-pt active">Como Funciona</span>
-                <span class="lang-block lang-en">How It Works</span>
+            <a href="#como-funciona" class="nav-link">
+            <span class="lang-block lang-en active">How It Works</span>
+            <span class="lang-block lang-pt">Como Funciona</span>
             </a>
-            <a href="#testimonials" class="nav-link">
-                <span class="lang-block lang-pt active">Depoimentos</span>
-                <span class="lang-block lang-en">Testimonials</span>
+            <a href="#depoimentos" class="nav-link">
+            <span class="lang-block lang-en active">Testimonials</span>
+            <span class="lang-block lang-pt">Depoimentos</span>
             </a>
-            <a href="#area" class="nav-link">
-                <span class="lang-block lang-pt active">Área de Atendimento</span>
-                <span class="lang-block lang-en">Service Area</span>
+            <a href="#area-atendimento" class="nav-link">
+            <span class="lang-block lang-en active">Service Area</span>
+            <span class="lang-block lang-pt">Área de Atendimento</span>
             </a>
-            <a href="#about" class="nav-link">
-                <span class="lang-block lang-pt active">Sobre</span>
-                <span class="lang-block lang-en">About</span>
+            <a href="#sobre" class="nav-link">
+            <span class="lang-block lang-en active">About</span>
+            <span class="lang-block lang-pt">Sobre</span>
             </a>
-            <a href="#contact" class="nav-link">
-                <span class="lang-block lang-pt active">Contato</span>
-                <span class="lang-block lang-en">Contact</span>
+            <a href="#contato" class="nav-link">
+            <span class="lang-block lang-en active">Contact</span>
+            <span class="lang-block lang-pt">Contato</span>
             </a>
             <a href="/termos-e-faq.html" class="nav-link">
-                <span class="lang-block lang-pt active">Termos &amp; FAQ</span>
-                <span class="lang-block lang-en">Terms &amp; FAQ</span>
+            <span class="lang-block lang-en active">Terms &amp; FAQ</span>
+            <span class="lang-block lang-pt">Termos &amp; FAQ</span>
             </a>
-            </div>
-        </nav>
+        </div>
 
-        <div class="language-switcher">
-            <div class="lang-toggle">
-            <button class="lang-btn active" data-lang="pt">
-                <span class="flag">🇧🇷</span><span>PT</span>
-            </button>
-            <button class="lang-btn" data-lang="en">
-                <span class="flag">🇨🇦</span><span>EN</span>
-            </button>
-            </div>
-
-            <a href="https://wa.me/13658833886"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-whatsapp">
-            <span class="icon">📲</span>
+        <!-- BOTÃO WHATSAPP -->
+        <a href="https://wa.me/13658833886" target="_blank" class="btn-whatsapp">
+            <span class="icon">📱</span>
             <span class="lang-block lang-pt active">Chamar no WhatsApp</span>
             <span class="lang-block lang-en">WhatsApp Now</span>
-            </a>
+        </a>
+        </nav>
+
+        <!-- SELETOR DE IDIOMA (fora do nav, fica fixo no mobile) -->
+        <div class="language-switcher">
+        <div class="lang-toggle">
+            <button class="lang-btn active" data-lang="pt">
+            <span class="flag">🇧🇷</span><span>PT</span>
+            </button>
+            <button class="lang-btn" data-lang="en">
+            <span class="flag">🇨🇦</span><span>EN</span>
+            </button>
         </div>
         </div>
 
-        <button class="mobile-menu-toggle" id="mobileMenuBtn">☰</button>
+        <!-- BOTÃO MENU MOBILE -->
+        <button class="mobile-menu-toggle" id="mobileMenuBtn">≡</button>
     </div>
     </header>
+
 
 
   <main>
