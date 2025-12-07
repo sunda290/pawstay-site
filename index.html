@@ -164,6 +164,13 @@
       font-size: 12px;
     }
 
+    .lang-toggle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+
     .lang-btn {
       border-radius: 999px;
       border: 1px solid var(--border-soft);
@@ -1136,85 +1143,136 @@
     .lang-block.active {
       display: block;
     }
+
+    /* Mobile: fixa o seletor de idioma no topo à direita
+    no mesmo breakpoint em que o menu vira sanduíche */
+    @media (max-width: 900px) {
+    nav {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .mobile-nav-open nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        padding: 12px 20px 16px;
+        background: #ffffff;
+        border-bottom: 1px solid var(--border-soft);
+    }
+
+    .mobile-nav-open .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lang-toggle {
+        position: fixed;
+        top: 70px;
+        right: 12px;
+        z-index: 1100;
+        background: #f8fafc;
+        border-radius: 999px;
+        padding: 2px 4px;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+    }
+
+    /* header ainda acima do conteúdo, mas abaixo do seletor */
+    header {
+        z-index: 1000;
+    }
+    }
+
+
+
   </style>
 </head>
 <body>
-  <header id="top">
+    <header id="top">
     <div class="header-inner">
         <div class="brand">
         <div class="logo-icon">
-            <img src="img/logo.png"
-                alt="PawStay – pet sitter em Hamilton"
-                class="logo-img">
+            <img src="img/logo.png" alt="PawStay logo" style="width:24px;height:24px;object-fit:contain;" />
         </div>
-            <div class="brand-text">
-                <span class="brand-name">PawStay</span>
+        <div class="brand-text">
+            <span class="brand-name">PawStay</span>
+            <span class="brand-tagline">
+            <span class="lang-block lang-pt active">Pet sitter em Hamilton &amp; Região</span>
+            <span class="lang-block lang-en">Pet sitter in Hamilton &amp; Area</span>
+            </span>
+        </div>
+        </div>
 
-                <span class="brand-tagline lang-block lang-pt">
-                    Pet sitter em<br>Hamilton &amp; Região
-                </span>
-
-                <span class="brand-tagline lang-block lang-en">
-                    Pet sitter in Hamilton &amp; Area
-                </span>
+        <!-- bloco da direita: menu + idioma + WhatsApp -->
+        <div class="header-right">
+        <nav id="mainNav">
+            <div class="nav-links">
+            <a href="#home" class="nav-link">
+                <span class="lang-block lang-pt active">Início</span>
+                <span class="lang-block lang-en">Home</span>
+            </a>
+            <a href="#services" class="nav-link">
+                <span class="lang-block lang-pt active">Serviços</span>
+                <span class="lang-block lang-en">Services</span>
+            </a>
+            <a href="#how" class="nav-link">
+                <span class="lang-block lang-pt active">Como Funciona</span>
+                <span class="lang-block lang-en">How It Works</span>
+            </a>
+            <a href="#testimonials" class="nav-link">
+                <span class="lang-block lang-pt active">Depoimentos</span>
+                <span class="lang-block lang-en">Testimonials</span>
+            </a>
+            <a href="#area" class="nav-link">
+                <span class="lang-block lang-pt active">Área de Atendimento</span>
+                <span class="lang-block lang-en">Service Area</span>
+            </a>
+            <a href="#about" class="nav-link">
+                <span class="lang-block lang-pt active">Sobre</span>
+                <span class="lang-block lang-en">About</span>
+            </a>
+            <a href="#contact" class="nav-link">
+                <span class="lang-block lang-pt active">Contato</span>
+                <span class="lang-block lang-en">Contact</span>
+            </a>
+            <a href="/termos-e-faq.html" class="nav-link">
+                <span class="lang-block lang-pt active">Termos &amp; FAQ</span>
+                <span class="lang-block lang-en">Terms &amp; FAQ</span>
+            </a>
             </div>
-
-        </div>
-
-      <button class="mobile-menu-toggle" id="mobileMenuBtn">☰</button>
-
-      <nav id="mainNav">
-        <div class="nav-links">
-          <a href="#inicio" class="nav-link">
-            <span class="lang-block lang-pt active">Início</span>
-            <span class="lang-block lang-en">Home</span>
-        </a>
-        <a href="#servicos" class="nav-link">
-          <span class="lang-block lang-pt active">Serviços</span>
-          <span class="lang-block lang-en">Services</span>
-        </a>
-        <a href="#sobre" class="nav-link">
-          <span class="lang-block lang-pt active">Sobre</span>
-          <span class="lang-block lang-en">About</span>
-        </a>
-          <a href="#como-funciona" class="nav-link">
-            <span class="lang-block lang-pt active">Como Funciona</span>
-            <span class="lang-block lang-en">How It Works</span>
-          </a>
-          <a href="#area-atendimento" class="nav-link">
-              <span class="lang-block lang-pt active">Área de Atendimento</span>
-              <span class="lang-block lang-en">Service Area</span>
-            </a>
-            <a href="#depoimentos" class="nav-link">
-              <span class="lang-block lang-pt active">Depoimentos</span>
-              <span class="lang-block lang-en">Testimonials</span>
-            </a>
-            <a href="#contato" class="nav-link">
-            <span class="lang-block lang-pt active">Contato</span>
-            <span class="lang-block lang-en">Contact</span>
-          </a>
-          <a href="termos-e-faq.html" class="nav-link">
-            <span class="lang-block lang-pt active">Termos & FAQ</span>
-            <span class="lang-block lang-en">Terms & FAQ</span>
-          </a>
-        </div>
+        </nav>
 
         <div class="language-switcher">
-          <button class="lang-btn active" data-lang="pt">
-            <span class="flag">🇧🇷</span><span>PT</span>
-          </button>
-          <button class="lang-btn" data-lang="en">
-            <span class="flag">🇨🇦</span><span>EN</span>
-          </button>
-          <a href="https://wa.me/13658833886" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            <div class="lang-toggle">
+            <button class="lang-btn active" data-lang="pt">
+                <span class="flag">🇧🇷</span><span>PT</span>
+            </button>
+            <button class="lang-btn" data-lang="en">
+                <span class="flag">🇨🇦</span><span>EN</span>
+            </button>
+            </div>
+
+            <a href="https://wa.me/13658833886"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-whatsapp">
             <span class="icon">📲</span>
             <span class="lang-block lang-pt active">Chamar no WhatsApp</span>
             <span class="lang-block lang-en">WhatsApp Now</span>
-          </a>
+            </a>
         </div>
-      </nav>
+        </div>
+
+        <button class="mobile-menu-toggle" id="mobileMenuBtn">☰</button>
     </div>
-  </header>
+    </header>
+
 
   <main>
     <!-- HERO -->
